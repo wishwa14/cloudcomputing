@@ -1,0 +1,50 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: satellite-investigator
+  labels:
+    name: satellite-investigator
+spec:
+  ports:
+    - nodePort: 30163
+      port: 8080
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    app: satellite-investigator
+  type: NodePort
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: satellite-investigator
+spec:
+  selector:
+    matchLabels:
+      app: satellite-investigator
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: satellite-investigator
+    spec:
+      containers:
+        - name: satellite-investigator
+          image: satellite-investigator:1.0
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOSTNAME
+              value: "mysql"
+            - name: DB_PORT
+              value: "3306"
+            - name: DB_NAME
+              value: "SPACEX"
+            - name: DB_USERNAME
+              value: "dbadmin"        # RDS DB Username is dbadmin
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mysql-db-password
+                  key: db-password

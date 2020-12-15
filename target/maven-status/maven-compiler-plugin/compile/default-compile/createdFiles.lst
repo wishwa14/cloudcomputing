@@ -1,0 +1,4 @@
+com/satellite/app/SatelliteMainApp.class
+com/satellite/app/entity/Satellite.class
+com/satellite/app/repository/SatelliteRepository.class
+com/satellite/app/controller/SatelliteController.class
