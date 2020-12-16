@@ -42,7 +42,7 @@ spec:
             - name: DB_NAME
               value: "SPACEX"
             - name: DB_USERNAME
-              value: "dbadmin"        # RDS DB Username is dbadmin
+              value: "dbadmin"
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:

@@ -23,7 +23,7 @@ spec:
   selector:
     matchLabels:
       app: satellite-investigator
-  replicas: 1
+  replicas: 2
   template:
     metadata:
       labels:
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: satellite-investigator
-          image: satellite-investigator:1.0
+          image: 604838322636.dkr.ecr.us-east-1.amazonaws.com/testapp:8be114e74d00c8910419c310be0cf5a6006ab1ed
           ports:
             - containerPort: 8080
           env:
@@ -42,7 +42,7 @@ spec:
             - name: DB_NAME
               value: "SPACEX"
             - name: DB_USERNAME
-              value: "dbadmin"        # RDS DB Username is dbadmin
+              value: "dbadmin"
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:

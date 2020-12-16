@@ -1,4 +1,10 @@
+com/satellite/app/entity/Constellation.class
+com/satellite/app/controller/HealthController.class
 com/satellite/app/SatelliteMainApp.class
 com/satellite/app/entity/Satellite.class
 com/satellite/app/repository/SatelliteRepository.class
 com/satellite/app/controller/SatelliteController.class
+com/satellite/app/utils/SatelliteUtil.class
+com/satellite/app/controller/ConstellationController.class
+com/satellite/app/repository/ConstellationRepository.class
+com/satellite/app/beans/SatelliteHealth.class
