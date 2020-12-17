@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
         - name: satellite-investigator
-          image: 604838322636.dkr.ecr.us-east-1.amazonaws.com/testapp:8be114e74d00c8910419c310be0cf5a6006ab1ed
+          image: IMAGE
           ports:
             - containerPort: 8080
           env:
